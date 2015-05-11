@@ -3,6 +3,14 @@ class FeaturesController < ApplicationController
   end
 
   def create
-    render plain: params[:feature].inspect
+    @feature = Feature.new(feature_params)
+
+    @feature.save
+    redirect_to @feature
   end
+
+  private
+    def feature_params
+      params.require(:feature).permit(:title, :text)
+    end
 end
