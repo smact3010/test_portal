@@ -1,7 +1,6 @@
 <h1>Listing features</h1>
 <%= link_to 'New feature', new_feature_path %>
 <table>
-
   <tr>
     <th>Title</th>
     <th>Text</th>
@@ -11,7 +10,8 @@
     <tr>
       <td><%= feature.title %></td>
       <td><%= feature.text %></td>
+      <td><%= link_to 'Show', feature_path(feature) %></td>
+      <td><%= link_to 'Edit', edit_feature_path(feature) %></td>
     </tr>
   <% end %>
-
 </table>
