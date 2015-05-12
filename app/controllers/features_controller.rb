@@ -1,4 +1,12 @@
+# A frequent practice is to place the standard CRUD actions in each
+# controller in the following order: index, show, new, edit, create, update
+# and destroy.
+
 class FeaturesController < ApplicationController
+  def show
+    @feature = Feature.find(params[:id])
+  end
+
   def new
   end
 
