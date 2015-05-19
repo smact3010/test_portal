@@ -39,6 +39,13 @@ class FeaturesController < ApplicationController
     end
   end
 
+  def destroy
+    @feature = Feature.find(params[:id])
+    @feature.destroy
+
+    redirect_to features_path
+  end
+
   private
     def feature_params
       params.require(:feature).permit(:title, :text)
