@@ -1,34 +1,5 @@
-<h1>Editing feature</h1>
+<h1>Edit feature</h1>
 
-<%= form_for :feature, url: feature_path(@feature), method: :patch do |f| %>
-  
-  <% if @feature.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@feature.errors.count, "error") %> prohibited this feature from being saved:
-      </h2>
-      <ul>
-        <% @feature.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <p>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </p>
-
-  <p>
-    <%= f.label :text %>
-    <%= f.text_area :text %>
-  </p>
-
-  <p>
-    <%= f.submit %>
-  </p>
-
-<% end %>
+<%= render 'form' %>
 
 <%= link_to 'Back', features_path %>
